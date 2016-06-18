@@ -1,4 +1,5 @@
 var React = require('react');
+//child class
 var ListItem = React.createClass({
 	render: function(){
 		//render is jsx that will convert HTML element into javascript
