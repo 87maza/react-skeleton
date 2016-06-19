@@ -19787,9 +19787,59 @@ module.exports = ListManager;
 
 },{"./List.jsx":168,"react":166}],171:[function(require,module,exports){
 var React = require('react');
+var OtherInner = require('./OtherInner.jsx');
+
+var Other = React.createClass({
+	displayName: 'Other',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'h1',
+				null,
+				'I AM OUTAR DIV'
+			),
+			React.createElement(OtherInner, null)
+		);
+	}
+});
+
+module.exports = Other;
+
+},{"./OtherInner.jsx":172,"react":166}],172:[function(require,module,exports){
+var React = require('react');
+var InnerDiv = React.createClass({
+	displayName: 'InnerDiv',
+
+	render: function () {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'p',
+				null,
+				' I am the ',
+				React.createElement(
+					'em',
+					null,
+					'INNERDIV'
+				)
+			)
+		);
+	}
+});
+
+module.exports = InnerDiv;
+
+},{"react":166}],173:[function(require,module,exports){
+var React = require('react');
 var ReactDOM = require('react-dom');
 var ListManager = require('./components/ListManager.jsx');
+var Other = require('./components/Other.jsx');
 
 ReactDOM.render(React.createElement(ListManager, { title: 'Ingredients' }), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(Other, null), document.getElementById('divs'));
 
-},{"./components/ListManager.jsx":170,"react":166,"react-dom":1}]},{},[171]);
+},{"./components/ListManager.jsx":170,"./components/Other.jsx":171,"react":166,"react-dom":1}]},{},[173]);
